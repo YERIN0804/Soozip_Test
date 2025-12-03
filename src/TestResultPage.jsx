@@ -284,6 +284,7 @@ export default function TestResultPage() {
                       height: "100%",
                       objectFit: "cover",
                       borderRadius: 20,
+                      imageRendering: "crisp-edges",
                     }}
                   />
                 </div>
@@ -297,6 +298,7 @@ export default function TestResultPage() {
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
+                      imageRendering: "crisp-edges",
                       borderRadius: 20,
                     }}
                   />
