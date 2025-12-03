@@ -1,12 +1,28 @@
+/* 화면 전체를 노란색으로 채우기 */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fbf2d5; /* 노란 배경 */
+  height: 100%;
+  width: 100%;
+}
+
+/* iPhone Safari 노치 영역까지 배경 적용 */
+body {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* 루트 컨테이너 */
 #root {
   /* PC에서는 408px 고정 */
   max-width: 408px;
   margin: 0 auto;
   text-align: center;
-  background: #fbf2d5; /* 기존 inline 배경색 옮김 */
+  background: #fbf2d5; /* 동일 배경 */
   display: flex;
   flex-direction: column;
   position: relative;
+  min-height: 100vh;
 }
 
 /* 모바일 (세로/가로 둘 다) → 꽉 차지만 여백 */
@@ -14,11 +30,14 @@
   #root {
     max-width: 100vw;
     width: 100vw;
-  /*padding: 0 16px; 좌우 여백*/
     box-sizing: border-box;
     background: #fbf2d5;
   }
 }
+
+/* ---------------------------------- */
+/* 아래는 기존 코드 그대로 유지 */
+/* ---------------------------------- */
 
 .logo {
   height: 6em;
@@ -26,9 +45,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }

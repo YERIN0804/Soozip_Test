@@ -342,17 +342,23 @@ export default function RoombtiTest() {
         {current.questionoption.map((opt, i) => {
           //const [hoveredIndex, setHoveredIndex] = useState(null);
           const isImage = opt.option_text?.toLowerCase().endsWith(".png");
-          
+          const isTouchDevice = "ontouchstart" in window;
 
           
           return (
             <div
               key={opt.option_id}
-              onClick={() => handleAnswer(opt.option_id, i)}
-              // onMouseEnter={() => setIsHovered(true)}
-              // onMouseLeave={() => setIsHovered(false)}
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => {handleAnswer(opt.option_id, i);
+                setHoveredIndex(null);}
+              }
+              // onMouseEnter={() => setHoveredIndex(i)}
+              // onMouseLeave={() => setHoveredIndex(null)}
+              onMouseEnter={() => {
+                if (!isTouchDevice) setHoveredIndex(i); // ← 모바일에서는 hover 무시
+              }}
+              onMouseLeave={() => {
+                if (!isTouchDevice) setHoveredIndex(null); // ← 모바일에서는 hover 무시
+              }}
               style={{
                 width: current.questionoption.length === 4 ? 150 : 312,
                 height: 170,
