@@ -6,6 +6,8 @@ export default function Home() {
   return (
     <div
       style={{
+        paddingTop: "0px",
+        marginTop: "0px",
         width: "100vw",
         minHeight: "100vh", // 화면 세로 전체
         height: "calc(var(--vh, 1vh) * 100)", // ← iPhone Safari 완전 대응!!!
