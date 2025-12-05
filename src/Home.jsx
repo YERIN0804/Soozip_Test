@@ -92,7 +92,7 @@ export default function Home() {
           marginTop: "0rem", // 원하는 만큼 조절
           marginBottom: "3rem",
           width: 360,
-          maxHeight: "40vh",
+          //maxHeight: "40vh",
           objectFit: "cover",
         }}
       />
