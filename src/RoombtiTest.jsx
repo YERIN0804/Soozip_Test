@@ -225,10 +225,13 @@ export default function RoombtiTest() {
   return (
     <div
       style={{
-        width: 408,
-        //height: 852,
-        minHeight: 700,
-        height: "100dvh",
+        // width: 408,
+        // //height: 852,
+        // minHeight: 700,
+        // height: "100dvh",
+        width: "100vw", // 화면 가로 전체
+        minHeight: "100vh", // 화면 세로 전체
+        height: "100dvh", // 세로 꽉 차게
         background: "#fbf2d5",
         display: "flex",
         flexDirection: "column",
@@ -366,8 +369,15 @@ export default function RoombtiTest() {
                 background: "#fff",
                 //border: `2px solid ${selected === i ? "#fe6a0f" : "#ddd9d9"}`,
                 // 🔹 수정: 선택 또는 hover 상태에 따라 border 색상 변경
+                // border: `2px solid ${
+                //   selected === i ? "#fe6a0f" : hoveredIndex === i ? "#fe6a0f" : "#ddd9d9"
+                // }`,
                 border: `2px solid ${
-                  selected === i ? "#fe6a0f" : hoveredIndex === i ? "#fe6a0f" : "#ddd9d9"
+                  selected === i
+                    ? "#fe6a0f"
+                    : (!isTouchDevice && hoveredIndex === i)
+                    ? "#fe6a0f"
+                    : "#ddd9d9"
                 }`,
                 display: "flex",
                 alignItems: "center",
@@ -381,7 +391,7 @@ export default function RoombtiTest() {
               {/* 🔥 텍스트 vs 이미지 분기 */}
               {isImage ? (
                 <img
-                  src={`src/assets/${opt.option_text}`}
+                  src={`${opt.option_text}`}
                   alt="option"
                   style={{
                     width: "100%",
@@ -390,7 +400,7 @@ export default function RoombtiTest() {
                   }}
                 />
               ) : (
-                <p style={{ fontSize: 25, fontWeight: 500, color: "#000" }}>
+                <p style={{ fontSize: 25, fontWeight: 500, color: "#000", whiteSpace: "pre-wrap", wordWrap: "break-word",}}>
                   {opt.option_text}
                 </p>
               )}
@@ -452,7 +462,7 @@ export default function RoombtiTest() {
                 fontSize: 18,
                 fontWeight: 600,
                 color: "#fe6a0f",
-                marginBottom: 5,
+                marginBottom: 1,
               }}
             >
               잠시만요!
