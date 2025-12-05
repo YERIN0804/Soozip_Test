@@ -384,7 +384,7 @@ export default function RoombtiTest() {
                 justifyContent: "center",
                 cursor: "pointer",
                 textAlign: "center",
-                padding: "10px",
+                //padding: "10px",
               }}
             >
 
