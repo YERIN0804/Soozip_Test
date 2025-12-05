@@ -14,21 +14,21 @@ export default function RoomCounsult() {
       title: "스타일링 상담",
       subtitle: "카카오톡 1:1 상담으로 맞춤 솔루션 알아보기",
       url: "http://pf.kakao.com/_VNxiLn/chat",
-      imgSrc: "src/assets/kakao_icon.png",
+      imgSrc: "https://mmfurloptocazvhfmcvk.supabase.co/storage/v1/object/public/roombti/kakao_icon.png",
     },
     {
       id: 2,
       title: "스타일링 타입",
       subtitle: "스타일링은 어떤 종류가 있고, 어떤 순서로 진행되는지 알아보기",
       url: "/styling-type",
-      imgSrc: "src/assets/type_icon.png",
+      imgSrc: "https://mmfurloptocazvhfmcvk.supabase.co/storage/v1/object/public/roombti/type_icon.png",
     },
     {
       id: 3,
       title: "스타일링 사례",
       subtitle: "수집과 함께 스타일링을 더 알아보기",
       url: "https://soozip.co.kr/portfolio/list.html?cate_no=97",
-      imgSrc: "src/assets/soozip_logo.png",
+      imgSrc: "https://mmfurloptocazvhfmcvk.supabase.co/storage/v1/object/public/roombti/soozip_logo.png",
     },
   ];
 
