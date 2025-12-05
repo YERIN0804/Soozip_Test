@@ -20,6 +20,7 @@ export default function Home() {
         padding: "calc(env(safe-area-inset-top) + 2rem) 1rem calc(env(safe-area-inset-bottom) + 2rem)",
         boxSizing: "border-box",
         cursor: "default",
+        overflow: "hidden"
       }}
     >
       {/* 상단 로고 + 텍스트 */}
@@ -89,11 +90,11 @@ export default function Home() {
         src="https://mmfurloptocazvhfmcvk.supabase.co/storage/v1/object/public/roombti/main_bear.png"
         alt="main"
         style={{
-          marginTop: "0rem", // 원하는 만큼 조절
-          marginBottom: "3rem",
-          width: 360,
-          //maxHeight: "40vh",
-          objectFit: "cover",
+          // marginTop: "0rem", // 원하는 만큼 조절
+          marginBottom: "2rem",
+          width: "90%",
+          maxHeight: "40vh",
+          objectFit: "contain",
         }}
       />
       {/* 하단 버튼 */}
