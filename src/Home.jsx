@@ -6,15 +6,18 @@ export default function Home() {
   return (
     <div
       style={{
-        width: 408,
-        minHeight: 600,
-        height: "100dvh", // 세로 꽉 차게
+        //width: 408,
+        // minHeight: 600,
+        width: "100vw", // 화면 가로 전체
+        // minHeight: "100vh", // 화면 세로 전체
+        height: "100svh",   // 변경!
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-between",
         background: "#fbf2d5",
-        padding: "2rem 1rem",
+        //padding: "2rem 1rem",
+        padding: "calc(env(safe-area-inset-top) + 2rem) 1rem calc(env(safe-area-inset-bottom) + 2rem)",
         boxSizing: "border-box",
         cursor: "default",
       }}
@@ -89,6 +92,7 @@ export default function Home() {
           marginTop: "0rem", // 원하는 만큼 조절
           marginBottom: "3rem",
           width: 360,
+          maxHeight: "40vh",
           objectFit: "cover",
         }}
       />
