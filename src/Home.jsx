@@ -10,7 +10,8 @@ export default function Home() {
         // minHeight: 600,
         width: "100vw", // 화면 가로 전체
         // minHeight: "100vh", // 화면 세로 전체
-        height: "100svh",   // 변경!
+        //height: "100svh",   // 변경!
+        height: "calc(var(--vh, 1vh) * 100)", // ← iPhone Safari 완전 대응!!!
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -20,7 +21,7 @@ export default function Home() {
         padding: "calc(env(safe-area-inset-top) + 2rem) 1rem calc(env(safe-area-inset-bottom) + 2rem)",
         boxSizing: "border-box",
         cursor: "default",
-        overflow: "hidden"
+        overflow: "hidden",
       }}
     >
       {/* 상단 로고 + 텍스트 */}

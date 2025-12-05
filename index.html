@@ -9,5 +9,15 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      function setVH() {
+        document.documentElement.style.setProperty(
+          "--vh",
+          window.innerHeight * 0.01 + "px"
+        );
+      }
+      setVH();
+      window.addEventListener("resize", setVH);
+    </script>
   </body>
 </html>
