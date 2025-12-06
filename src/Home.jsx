@@ -6,19 +6,18 @@ export default function Home() {
   return (
     <div
       style={{
-        paddingTop: "0px",
-        marginTop: "0px",
         width: "100vw",
-        minHeight: "100vh", // 화면 세로 전체
-        height: "calc(var(--vh, 1vh) * 100)", // ← iPhone Safari 완전 대응!!!
+        height: "calc(var(--vh, 1vh) * 100)",  // iPhone Safari 대응
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-between",
         background: "#fbf2d5",
         padding: "2rem 1rem",
+        paddingTop: "calc(env(safe-area-inset-top) + 1.2rem)",
+        paddingBottom: "calc(env(safe-area-inset-bottom) + 1.5rem)",
         boxSizing: "border-box",
-        overflow: "hidden", // 스크롤 제거
+        overflow: "hidden", // 스크롤 완전 제거
       }}
     >
       {/* 상단 로고 + 텍스트 */}
@@ -29,7 +28,7 @@ export default function Home() {
             alignItems: "center",
             justifyContent: "center",
             gap: "6px",
-            margin: "30px 0 8px 0",
+            margin: "20px 0 4px 0",     // 기존보다 살짝 줄임(정확히 맞추기 위해)
           }}
         >
           <img
@@ -40,7 +39,7 @@ export default function Home() {
               height: "20px",
               objectFit: "contain",
               position: "relative",
-              top: "40px",
+              top: "28px",              // 기존 40px보다 줄임 — 화면 넘김 방지
             }}
           />
           <p
@@ -50,7 +49,7 @@ export default function Home() {
               color: "rgba(0,0,0,0.68)",
               margin: 0,
               position: "relative",
-              top: "40px",
+              top: "28px",              // 동일하게 조정
             }}
           >
             수집 방BTI
@@ -59,10 +58,11 @@ export default function Home() {
 
         <p
           style={{
-            fontSize: 50,
+            fontSize: 48,              // 기존보다 2px만 줄임 (디자인 유지)
             fontWeight: 800,
             color: "#000",
-            marginTop: 70,
+            marginTop: 50,             // 기존 70 → 최적화
+            marginBottom: 0,
           }}
         >
           나의{" "}
@@ -86,10 +86,10 @@ export default function Home() {
         src="https://mmfurloptocazvhfmcvk.supabase.co/storage/v1/object/public/roombti/main_bear.png"
         alt="main"
         style={{
-          width: 360,
+          width: "85%",
+          maxHeight: "32vh",          // ← 핵심: 화면 넘지 않는 적정값
           objectFit: "contain",
-          maxHeight: "40vh", // ← 전체 높이 넘지 않게 설정!
-          marginBottom: "2rem",
+          marginBottom: "1.2rem",
         }}
       />
 
@@ -109,6 +109,7 @@ export default function Home() {
           alignItems: "center",
           justifyContent: "center",
           cursor: "pointer",
+          flexShrink: 0,               // 버튼 절대 줄어들지 않게(중요!)
         }}
         onClick={() => navigate("/loading")}
       >
@@ -118,7 +119,7 @@ export default function Home() {
   );
 }
 
-// // 예린 수정
+
 // import { useNavigate } from "react-router-dom";
 
 // export default function Home() {
@@ -127,42 +128,37 @@ export default function Home() {
 //   return (
 //     <div
 //       style={{
-//         //width: 408,
-//         // minHeight: 600,
-//         width: "100vw", // 화면 가로 전체
-//         // minHeight: "100vh", // 화면 세로 전체
-//         //height: "100svh",   // 변경!
+//         paddingTop: "0px",
+//         marginTop: "0px",
+//         width: "100vw",
+//         minHeight: "100vh", // 화면 세로 전체
 //         height: "calc(var(--vh, 1vh) * 100)", // ← iPhone Safari 완전 대응!!!
 //         display: "flex",
 //         flexDirection: "column",
 //         alignItems: "center",
 //         justifyContent: "space-between",
 //         background: "#fbf2d5",
-//         //padding: "2rem 1rem",
-//         padding: "calc(env(safe-area-inset-top) + 2rem) 1rem calc(env(safe-area-inset-bottom) + 2rem)",
+//         padding: "2rem 1rem",
 //         boxSizing: "border-box",
-//         cursor: "default",
-//         overflow: "hidden",
+//         overflow: "hidden", // 스크롤 제거
 //       }}
 //     >
 //       {/* 상단 로고 + 텍스트 */}
-//       <div style={{ textAlign: "center", cursor: "default" }}>
-//         {/* 로고 + '수집 방BTI' 한 줄 배치 */}
+//       <div style={{ textAlign: "center" }}>
 //         <div
 //           style={{
 //             display: "flex",
-//             alignItems: "center", // 세로 가운데 정렬
-//             justifyContent: "center", // 전체 중앙 정렬
-//             gap: "6px", // 로고와 글씨 사이 간격
+//             alignItems: "center",
+//             justifyContent: "center",
+//             gap: "6px",
 //             margin: "30px 0 8px 0",
 //           }}
 //         >
 //           <img
-//             // src="src/assets/soozip_logo.png"
 //             src="https://mmfurloptocazvhfmcvk.supabase.co/storage/v1/object/public/roombti/soozip_logo.png"
 //             alt="로고"
 //             style={{
-//               width: "20px", // 작게!
+//               width: "20px",
 //               height: "20px",
 //               objectFit: "contain",
 //               position: "relative",
@@ -174,7 +170,7 @@ export default function Home() {
 //               fontSize: 34,
 //               fontWeight: 600,
 //               color: "rgba(0,0,0,0.68)",
-//               margin: 0, // 기본 여백 제거
+//               margin: 0,
 //               position: "relative",
 //               top: "40px",
 //             }}
@@ -197,8 +193,8 @@ export default function Home() {
 //               backgroundImage:
 //                 "linear-gradient(#f88d2f4D 0.5em, transparent 0)",
 //               backgroundRepeat: "no-repeat",
-//               backgroundSize: "100% 0.3em", // 형광펜 굵기
-//               backgroundPosition: "0 0.5em", // 위치 조정 (글자 아래)
+//               backgroundSize: "100% 0.3em",
+//               backgroundPosition: "0 0.5em",
 //             }}
 //           >
 //             집꾸 스타일
@@ -206,19 +202,19 @@ export default function Home() {
 //           은?
 //         </p>
 //       </div>
+
 //       {/* 중앙 이미지 */}
 //       <img
-//         //src="src/assets/main_bear.png"
 //         src="https://mmfurloptocazvhfmcvk.supabase.co/storage/v1/object/public/roombti/main_bear.png"
 //         alt="main"
 //         style={{
-//           // marginTop: "0rem", // 원하는 만큼 조절
-//           marginBottom: "2rem",
-//           width: "90%",
-//           maxHeight: "40vh",
+//           width: 360,
 //           objectFit: "contain",
+//           maxHeight: "40vh", // ← 전체 높이 넘지 않게 설정!
+//           marginBottom: "2rem",
 //         }}
 //       />
+
 //       {/* 하단 버튼 */}
 //       <button
 //         style={{
@@ -235,7 +231,6 @@ export default function Home() {
 //           alignItems: "center",
 //           justifyContent: "center",
 //           cursor: "pointer",
-//           marginTop: -20,
 //         }}
 //         onClick={() => navigate("/loading")}
 //       >
@@ -244,3 +239,4 @@ export default function Home() {
 //     </div>
 //   );
 // }
+
