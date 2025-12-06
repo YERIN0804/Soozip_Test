@@ -8,9 +8,9 @@ html, body {
 }
 
 /* iPhone Safari 노치 영역까지 배경 적용 */
-body {
+/* body {
   padding-top: env(safe-area-inset-top);
-}
+} */
 
 /* 루트 컨테이너 */
 #root {
