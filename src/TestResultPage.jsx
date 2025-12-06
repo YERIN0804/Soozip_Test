@@ -11,9 +11,10 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 export default function TestResultPage() {
   const navigate = useNavigate();
   const location = useLocation();
+  
  //   // ===== 여기서 navigate로 전달된 session_id를 가져옵니다 =====
   const { session_id } = location.state || {};
-
+  console.log("받은 session_id:", session_id);
   // // 결과 데이터를 저장할 state
   const [result, setResult] = useState(null);
 
@@ -33,7 +34,7 @@ export default function TestResultPage() {
         .from("resulttype")
         .select("*")
         .eq("session_id", session_id)
-        .single();
+         .maybeSingle();  // ← 이거!!!
 
       if (error) {
         console.error("결과 불러오기 실패:", error);
